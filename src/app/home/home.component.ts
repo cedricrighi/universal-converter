@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+// biome-ignore lint/style/useImportType: <explanation>
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  constructor(private router: Router) {}
 
+  redirectToConverter(route: string) {
+    this.router.navigate([route]);
+  }
 }
