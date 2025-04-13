@@ -1,0 +1,27 @@
+.home-section-container {
+  padding: 1rem;
+}
+
+.home-buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.home-buttons-container button {
+  width: 18rem;
+  padding-block: 0.6rem;
+  font-size: 1.2rem;
+  background-color: #3b82f6;
+  color: #f9fafb;
+  border: none;
+  border-radius: 1rem;
+}
+
+.home-buttons-container button:hover {
+  background-color: #2563eb;
+}
