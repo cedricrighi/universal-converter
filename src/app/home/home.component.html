@@ -4,7 +4,11 @@
     <button (click)="redirectToConverter('/converter')">
       Conversions standards
     </button>
-    <button>Conversions originales</button>
-    <button>Conversions humoristiques</button>
+    <button (click)="redirectToConverter('/original-converter')">
+      Conversions originales
+    </button>
+    <button (click)="redirectToConverter('/humoristic-converter')">
+      Conversions humoristiques
+    </button>
   </article>
 </section>
