@@ -6,10 +6,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #3b82f6;
+  --background-color: #f9fafb;
+  --text-color: #1f2937;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a:visited {
+  color: var(--text-color);
 }
 
 button {
