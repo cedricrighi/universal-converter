@@ -13,6 +13,7 @@ export class ConverterComponent {
   isDistanceChecked = false;
   isWeightChecked = false;
   isTemperatureChecked = false;
+  isCurrencyChecked = false;
   selectedInputUnit = '';
   selectedOutputUnit = '';
   inputValue = 0;
@@ -45,17 +46,22 @@ export class ConverterComponent {
         }
       } else if (this.isDistanceChecked || this.isWeightChecked) {
         this.convertedValue = (value * from.coefficient) / to.coefficient;
+      } else if (this.isCurrencyChecked) {
+        this.convertedValue = (value * from.coefficient) / to.coefficient;
       } else {
         console.error('Unité non reconnue');
       }
     }
   }
 
-  onCheckboxChange(changed: 'distance' | 'weight' | 'temperature') {
+  onCheckboxChange(
+    changed: 'distance' | 'weight' | 'temperature' | 'currency'
+  ) {
     if (changed === 'distance') {
       this.isDistanceChecked = true;
       this.isWeightChecked = false;
       this.isTemperatureChecked = false;
+      this.isCurrencyChecked = false;
 
       this.units = [
         { name: 'Kilomètre', value: 'km', coefficient: 1000 },
@@ -72,6 +78,7 @@ export class ConverterComponent {
       this.isDistanceChecked = false;
       this.isWeightChecked = true;
       this.isTemperatureChecked = false;
+      this.isCurrencyChecked = false;
 
       this.units = [
         { name: 'Kilogramme', value: 'kg', coefficient: 1 },
@@ -85,11 +92,25 @@ export class ConverterComponent {
       this.isDistanceChecked = false;
       this.isWeightChecked = false;
       this.isTemperatureChecked = true;
+      this.isCurrencyChecked = false;
 
       this.units = [
         { name: 'Celsius', value: 'C', coefficient: 1 },
         { name: 'Fahrenheit', value: 'F', coefficient: 1.8 },
         { name: 'Kelvin', value: 'K', coefficient: 1 },
+      ];
+    } else if (changed === 'currency') {
+      this.isDistanceChecked = false;
+      this.isWeightChecked = false;
+      this.isTemperatureChecked = false;
+      this.isCurrencyChecked = true;
+
+      this.units = [
+        { name: 'Euro', value: 'EUR', coefficient: 1 },
+        { name: 'Dollar américain', value: 'USD', coefficient: 0.86 },
+        { name: 'Livre sterling', value: 'GBP', coefficient: 1.17 },
+        { name: 'Yen japonais', value: 'JPY', coefficient: 0.0077 },
+        { name: 'Franc suisse', value: 'CHF', coefficient: 1.09 },
       ];
     }
   }

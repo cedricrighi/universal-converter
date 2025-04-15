@@ -1,6 +1,6 @@
 <section class="basic-converter-container">
   <a class="go-home-link" routerLink="/"><- Retour à l'accueil</a>
-  <article class="chekboxes-for-category">
+  <article class="checkboxes-for-category">
     <label>
       <input
         type="checkbox"
@@ -28,20 +28,38 @@
       />
       <span>Température</span>
     </label>
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="isCurrencyChecked"
+        (change)="onCheckboxChange('currency')"
+        name="option"
+      />
+      <span>Devise (Monnaie)</span>
+    </label>
   </article>
   <article class="input-unit-selector">
     <div class="input-zone">
-      <label for="input-unit"
-        >Sélectionnez l'unité de la valeur d'entrée :
-      </label>
-      <select id="input-unit" [(ngModel)]="selectedInputUnit">
-        <option [defaultSelected]="true" value="default">---</option>
-        <option *ngFor="let unit of units" [value]="unit.value">
-          {{ unit.name }}
-        </option>
-      </select>
-      <label for="value">Valeur :</label>
-      <input type="number" id="value" [(ngModel)]="inputValue" />
+      <div>
+        <label for="input-unit"
+          >Sélectionnez l'unité de la valeur d'entrée :
+        </label>
+        <select id="input-unit" [(ngModel)]="selectedInputUnit">
+          <option [defaultSelected]="true" value="default">---</option>
+          <option *ngFor="let unit of units" [value]="unit.value">
+            {{ unit.name }}
+          </option>
+        </select>
+      </div>
+      <div class="value-zone">
+        <label for="value">Valeur :</label>
+        <input
+          class="classic-converter-value-input"
+          type="number"
+          id="value"
+          [(ngModel)]="inputValue"
+        />
+      </div>
     </div>
     <div class="output-zone">
       <label for="output-unit"
@@ -54,7 +72,9 @@
         </option>
       </select>
     </div>
-    <button (click)="convert(inputValue)">Convertir</button>
+    <button class="button-to-convert" (click)="convert(inputValue)">
+      Convertir
+    </button>
     <div *ngIf="convertedValue !== null">
       Valeur convertie : {{ convertedValue }} {{ selectedOutputUnit }}
     </div>

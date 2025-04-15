@@ -1,8 +1,50 @@
-.input-unit-selector {
-  display: flex;
-  flex-direction: column;
+.basic-converter-container {
+  padding: 1rem;
 }
 
 .go-home-link {
   text-decoration: none;
+}
+
+.checkboxes-for-category {
+  margin-block: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxes-for-category label {
+  display: flex;
+  gap: 0.5rem;
+  place-items: center;
+}
+
+.checkboxes-for-category input {
+  border-radius: 50%;
+}
+
+.input-unit-selector,
+.input-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.value-zone {
+  display: flex;
+  place-items: center;
+  gap: 0.5rem;
+}
+
+.classic-converter-value-input {
+  padding: 0.3rem;
+}
+
+.button-to-convert {
+  margin: 0 auto;
+  width: 50%;
+  background-color: var(--primary-color);
+  color: #f9fafb;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
 }

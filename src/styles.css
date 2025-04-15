@@ -25,3 +25,25 @@ a:visited {
 button {
   cursor: pointer;
 }
+
+input[type="checkbox"] {
+  cursor: pointer;
+  appearance: none;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  border: 0.5px solid var(--text-color);
+  background-color: transparent;
+}
+
+input[type="checkbox"]:checked::before {
+  background-color: var(--primary-color);
+  border: none;
+  width: calc(0.7rem + 1px);
+  height: calc(0.7rem + 1px);
+}
