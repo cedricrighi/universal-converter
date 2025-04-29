@@ -3,7 +3,7 @@
 }
 
 .go-home-link {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .checkboxes-for-category {
@@ -20,6 +20,10 @@
 
 .checkboxes-for-category input {
   border-radius: 50%;
+}
+
+.input-unit-selector {
+  margin: 2rem;
 }
 
 .input-unit-selector,
@@ -41,10 +45,18 @@
 
 .button-to-convert {
   margin: 0 auto;
-  width: 50%;
+  width: fit-content;
   background-color: var(--primary-color);
   color: #f9fafb;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: none;
+  font-size: 1.2rem;
+  margin-top: 5rem;
+}
+
+.basic-converted-value {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-top: 3rem;
 }

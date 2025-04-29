@@ -1,3 +1,57 @@
 <section class="original-converter-container">
   <a class="go-home-link" routerLink="/"><- Retour à l'accueil</a>
+  <div class="input-zone">
+    <div>
+      <label for="input-unit"
+        >Sélectionnez l'unité de la valeur d'entrée :
+      </label>
+      <select id="input-unit" [(ngModel)]="selectedInputUnit">
+        <option [defaultSelected]="true" value="default">---</option>
+        <option *ngFor="let unit of inputUnits" [value]="unit.value">
+          {{ unit.name }}
+        </option>
+      </select>
+    </div>
+    <div class="value-zone">
+      <label for="value">Valeur :</label>
+      <input
+        class="classic-converter-value-input"
+        type="number"
+        id="value"
+        [(ngModel)]="inputValue"
+      />
+    </div>
+  </div>
+  <div *ngIf="isSpeedSelected()" class="output-zone">
+    <label for="output-unit"
+      >Sélectionnez l'unité de la valeur de sortie :
+    </label>
+    <select id="output-unit" [(ngModel)]="selectedOutputUnit">
+      <option [defaultSelected]="true" value="default">---</option>
+      <option *ngFor="let unit of outputUnits" [value]="unit.value">
+        {{ unit.name }}
+      </option>
+    </select>
+  </div>
+  <article class="result-zone">
+    <button class="button-to-convert" (click)="convert(inputValue)">
+      Convertir
+    </button>
+    <p class="basic-converted-value" *ngIf="isAgeSelected()">
+      Si tu étais un chat, tu aurais {{ convertedValue }} ans !
+    </p>
+    <p class="basic-converted-value" *ngIf="isDistanceSelected()">
+      Ta distance ( qui est en mètres ) est équivalente à {{ convertedValue }}
+      {{ convertedValue >= 1 ? "pieds humains" : "pied humain" }} !
+    </p>
+    <p class="basic-converted-value" *ngIf="isWeightSelected()">
+      Tu pèses {{ convertedValue }}
+      {{ convertedValue >= 1 ? "éléphants" : "éléphant" }} !
+    </p>
+    <p class="basic-converted-value" *ngIf="isSpeedSelected()">
+      Tu cours aussi vite que {{ convertedValue }}
+      {{ convertedValue >= 1 ? selectedOutputUnit + "s" : selectedOutputUnit }}
+      !
+    </p>
+  </article>
 </section>
