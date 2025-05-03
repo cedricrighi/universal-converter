@@ -51,7 +51,7 @@ export class OriginalConverterComponent {
       if (this.selectedOutputUnit === 'guépard') {
         this.convertedValue = value / 100;
       } else if (this.selectedOutputUnit === 'tortue') {
-        this.convertedValue = value / 0.3;
+        this.convertedValue = Number.parseFloat((value / 0.3).toFixed(2));
       }
     }
     if (this.isDistanceSelected()) {
