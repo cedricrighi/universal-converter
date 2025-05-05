@@ -7,9 +7,11 @@
       </label>
       <select id="input-unit" [(ngModel)]="selectedInputUnit">
         <option [defaultSelected]="true" value="default">---</option>
-        <option *ngFor="let unit of inputUnits" [value]="unit.value">
+        @for (unit of inputUnits; track unit.id) {
+        <option [value]="unit.value">
           {{ unit.name }}
         </option>
+        }
       </select>
     </div>
     <div class="value-zone">
@@ -29,9 +31,11 @@
     </label>
     <select id="output-unit" [(ngModel)]="selectedOutputUnit">
       <option [defaultSelected]="true" value="default">---</option>
-      <option *ngFor="let unit of outputUnits" [value]="unit.value">
+      @for (unit of outputUnits; track unit.id) {
+      <option [value]="unit.value">
         {{ unit.name }}
       </option>
+      }
     </select>
   </div>
   }

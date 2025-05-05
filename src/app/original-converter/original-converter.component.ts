@@ -19,15 +19,15 @@ export class OriginalConverterComponent {
   convertedValue: number | null = null;
 
   inputUnits = [
-    { name: 'Âge', value: 'ans' },
-    { name: 'Distance', value: 'pieds' },
-    { name: 'Poids', value: 'éléphants' },
-    { name: 'Vitesse', value: 'animal' },
+    { id: 1, name: 'Âge', value: 'ans' },
+    { id: 2, name: 'Distance', value: 'pieds' },
+    { id: 3, name: 'Poids', value: 'éléphants' },
+    { id: 4, name: 'Vitesse', value: 'animal' },
   ];
 
   outputUnits = [
-    { name: 'Guépard', value: 'guépard' },
-    { name: 'Tortue', value: 'tortue' },
+    { id: 1, name: 'Guépard', value: 'guépard' },
+    { id: 2, name: 'Tortue', value: 'tortue' },
   ];
 
   isAgeSelected(): boolean {
