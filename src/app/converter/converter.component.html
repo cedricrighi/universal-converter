@@ -79,8 +79,10 @@
     <button class="button-to-convert" (click)="convert(inputValue)">
       Convertir
     </button>
-    <p class="basic-converted-value" *ngIf="convertedValue !== null">
+    @if (convertedValue !== null) {
+    <p class="basic-converted-value">
       Valeur convertie : {{ convertedValue }} {{ selectedOutputUnit }}
     </p>
+    }
   </article>
 </section>

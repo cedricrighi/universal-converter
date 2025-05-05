@@ -1,11 +1,11 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-converter',
-  imports: [RouterLink, FormsModule, NgIf, NgFor],
+  imports: [RouterLink, FormsModule],
   templateUrl: './converter.component.html',
   styleUrl: './converter.component.css',
 })
@@ -17,7 +17,7 @@ export class ConverterComponent {
   selectedInputUnit = '';
   selectedOutputUnit = '';
   inputValue = 0;
-  convertedValue = 0;
+  convertedValue: number | null = null;
   units: { id: number; name: string; value: string; coefficient: number }[] =
     [];
 

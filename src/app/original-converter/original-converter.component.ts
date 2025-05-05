@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-original-converter',
-  imports: [RouterLink, NgIf, NgFor, FormsModule],
+  imports: [RouterLink, FormsModule],
   templateUrl: './original-converter.component.html',
   styleUrls: [
     './original-converter.component.css',
@@ -16,7 +16,7 @@ export class OriginalConverterComponent {
   inputValue = 0;
   selectedInputUnit = '';
   selectedOutputUnit = '';
-  convertedValue = 0;
+  convertedValue: number | null = null;
 
   inputUnits = [
     { name: 'Âge', value: 'ans' },

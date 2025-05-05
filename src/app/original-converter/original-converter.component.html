@@ -22,7 +22,8 @@
       />
     </div>
   </div>
-  <div *ngIf="isSpeedSelected()" class="output-zone">
+  @if (isSpeedSelected()) {
+  <div class="output-zone">
     <label for="output-unit"
       >Sélectionnez l'unité de la valeur de sortie :
     </label>
@@ -33,25 +34,31 @@
       </option>
     </select>
   </div>
+  }
   <article class="result-zone">
     <button class="button-to-convert" (click)="convert(inputValue)">
       Convertir
     </button>
-    <p class="basic-converted-value" *ngIf="isAgeSelected()">
+    @if (isAgeSelected() && convertedValue !== null) {
+    <p class="basic-converted-value">
       Si tu étais un chat, tu aurais {{ convertedValue }} ans !
     </p>
-    <p class="basic-converted-value" *ngIf="isDistanceSelected()">
+    } @if (isDistanceSelected() && convertedValue !== null) {
+    <p class="basic-converted-value">
       Ta distance ( qui est en mètres ) est équivalente à {{ convertedValue }}
       {{ convertedValue >= 1 ? "pieds humains" : "pied humain" }} !
     </p>
-    <p class="basic-converted-value" *ngIf="isWeightSelected()">
+    } @if (isWeightSelected() && convertedValue !== null) {
+    <p class="basic-converted-value">
       Tu pèses {{ convertedValue }}
       {{ convertedValue >= 1 ? "éléphants" : "éléphant" }} !
     </p>
-    <p class="basic-converted-value" *ngIf="isSpeedSelected()">
+    } @if (isSpeedSelected() && convertedValue !== null) {
+    <p class="basic-converted-value">
       Tu cours aussi vite que {{ convertedValue }}
       {{ convertedValue >= 1 ? selectedOutputUnit + "s" : selectedOutputUnit }}
       !
     </p>
+    }
   </article>
 </section>
