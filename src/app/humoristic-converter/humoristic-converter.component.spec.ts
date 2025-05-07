@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import type { ComponentFixture } from '@angular/core/testing';
 
 import { HumoristicConverterComponent } from './humoristic-converter.component';
 
@@ -8,9 +9,8 @@ describe('HumoristicConverterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HumoristicConverterComponent]
-    })
-    .compileComponents();
+      imports: [HumoristicConverterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HumoristicConverterComponent);
     component = fixture.componentInstance;

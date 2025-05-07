@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import type { ComponentFixture } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { OriginalConverterComponent } from './original-converter.component';
 
@@ -8,9 +9,8 @@ describe('OriginalConverterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OriginalConverterComponent]
-    })
-    .compileComponents();
+      imports: [OriginalConverterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(OriginalConverterComponent);
     component = fixture.componentInstance;
